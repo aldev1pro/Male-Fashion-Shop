@@ -1,0 +1,115 @@
+
+
+GET http://localhost:3000/hel
+###
+GET http://localhost:3000/test
+
+###
+GET  http://localhost:3000/working
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWlrZSIsInBsYWNlIjoiQmFrYXUiLCJpYXQiOjE2ODIzNTY0NzJ9.5BF4k8pR_clKMRoDJZgBiDz7ecQfN_lNZbSkuYdahJ0
+###
+GET http://localhost:3000/email
+
+###
+POST http://localhost:3000/emaill
+Content-Type: application/json
+
+{
+    "email":"bafanding0@gmail.com"
+}
+
+###
+POST http://localhost:3000/signUp
+Content-Type: application/json
+
+{
+    "firstName":"Mike",
+    "lastName":"Bass",
+    "email":"lnousman4@gmail.com",
+    "password":"how22222"
+}
+
+###
+POST http://localhost:3000/signIn
+Content-Type: application/json
+
+{
+    "email":"bafanding2@gmail.com",
+    "password":"2222"
+}
+
+###
+
+//cap endpoint
+GET http://localhost:3000/wizi/male/fashion/addCap
+###
+GET http://localhost:3000/wizi/male/fashion/cap
+###
+
+//shirt endpoint
+GET http://localhost:3000/wizi/male/fashion/addShirt
+###
+GET http://localhost:3000/wizi/male/fashion/shirt
+
+###
+//trouser endpoint
+GET http://localhost:3000/wizi/male/fashion/addTrouser
+###
+GET http://localhost:3000/wizi/male/fashion/trouser
+
+###
+//shoe endpoint
+GET http://localhost:3000/wizi/male/fashion/addShoe
+###
+GET http://localhost:3000/wizi/male/fashion/shoe
+
+###
+//watch endpoint
+GET http://localhost:3000/wizi/male/fashion/addWatch
+###
+GET http://localhost:3000/wizi/male/fashion/watch
+
+//siging endpoint
+###
+POST http://localhost:3000/wizi/male/fashion/signUp
+Content-Type: application/json
+
+{
+    "firstName":"Riles",
+    "lastName":"Davis",
+    "email":"rilesdavis50@gmail.com",
+    "password":"2222"
+}
+
+//siging endpoint
+###
+POST http://localhost:3000/wizi/male/fashion/signIn
+Content-Type: application/json
+
+{
+    "email":"bafanding2@gmail.com",
+    "password":"2222"
+
+}
+
+//order endpoint
+###
+POST http://localhost:3000/wizi/male/fashion/order
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJhZmFuZGluZzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIyMjIyIiwiaWF0IjoxNjgyMzk3ODY2fQ.X9_XZAqv9OcDLMQ8zDrts-xyLGjMXbKXhB2DPBUPqqY
+
+{
+    "productName":"brown",
+    "size":1,
+    "noOfProductsToBuy":1,
+    "locationOfUser":"Boston",
+    "userId":1
+}
+
+//home display endpoint
+###
+GET http://localhost:3000/wizi/male/fashion/getProducts
+
+//order endpoint
+###
+GET http://localhost:3000/wizi/male/fashion/allOrders

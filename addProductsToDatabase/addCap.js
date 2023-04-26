@@ -1,0 +1,225 @@
+
+
+const express = require("express")
+const router = express.Router()
+const cap = require("../model/cap")
+//const ipAddress = "192.168.0.112"
+const ipAddress = "127.0.0.1"
+router.use("/images",express.static("images/fashion-cap"))
+
+router.get("/addCap", async (req,res)=>{
+
+    try{
+    await cap.bulkCreate([
+       {
+           productName:"Blue cap",
+           price:130,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/blue.jpg`
+       },
+       {
+           productName:"Brazillian",
+           price:190,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/braziliancap.jpg`
+       },
+       {
+           productName:"Breez",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/breez.jpg`
+       },
+       {
+           productName:"Dadulue",
+           price:450,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/dad.jpg`
+       },
+       {
+           productName:"Doglile cap",
+           price:30,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/doglil.jpg`
+       },
+       {
+           productName:"Dukky",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/dukky.jpg`
+       },
+       {
+           productName:"Eyeso",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/eyes.jpg`
+       },
+       {
+           productName:"Flower",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/flower.jpg`
+       },
+       {
+           productName:"Happy",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/happy.jpg`
+       },
+       {
+           productName:"HotDogs",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/hotdogs.jpg`
+       },
+       {
+           productName:"HotCoverd",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/hotcoverd.jpg`
+       },
+       {
+           productName:"Jess",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/jess.jpg`
+       },
+       {
+           productName:"Logis",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/logis.jpg`
+       },
+       {
+           productName:"Mamu",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/mamu.jpg`
+       },
+       {
+           productName:"Math",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/math.jpg`
+       },
+       {
+           productName:"Multiple",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/multiple.jpg`
+       },
+       {
+           productName:"Niki",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/nike.jpg`
+       },
+       {
+           productName:"Kaznik",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/niky.jpg`
+       },
+       {
+           productName:"TheOnly",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/only.jpg`
+       },
+       {
+           productName:"Oval",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/oval.jpg`
+       },
+       {
+           productName:"Prince",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/prince.jpg`
+       },
+       {
+           productName:"blue cap",
+           price:100,
+           size:9,
+           itemsInStore:10,
+           imageUrl:`http://${ipAddress}:3000/images/snake.jpg`
+       },
+       {
+        productName:"Snow",
+        price:100,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/snow.jpg`
+    },
+    {
+        productName:"Soldier",
+        price:100,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/soldier.jpg`
+    },
+    {
+        productName:"Voilet",
+        price:100,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/voilet.jpg`
+    },
+    {
+        productName:"Vote",
+        price:100,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/vote.jpg`
+    },
+    {
+        productName:"White",
+        price:300,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/white.jpg`
+    },
+    {
+        productName:"Yellow",
+        price:150,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/yellow.jpg`
+    },
+    {
+        productName:"Yoo",
+        price:90,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/yoo.jpg`
+    },
+   ]).then(() => console.log("Users data have been saved"));
+   
+}catch(error){
+    res.status(404).json({message:"something went wrong"})
+}
+
+})
+
+module.exports = router

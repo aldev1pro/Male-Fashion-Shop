@@ -1,0 +1,212 @@
+
+
+const express = require("express")
+const router = express.Router()
+const shoe = require("../model/shoe")
+//const ipAddress = "192.168.0.112"
+const ipAddress = "127.0.0.1"
+router.use("/images",express.static("images/fashion-shoe"))
+
+router.get("/addShoe", async (req,res)=>{
+
+try{
+await shoe.bulkCreate([
+    {
+        productName:"Allstar",
+        price:490,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/allstar.jpg`
+    },
+    {
+        productName:"Beach",
+        price:300,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/beach.jpg`
+    },
+    {
+        productName:"Black",
+        price:400,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/black.jpg`
+    },
+    {
+        productName:"Blue",
+        price:700,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/blue.jpg`
+    },
+    {
+        productName:"Business",
+        price:680,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/bussiness.jpg`
+    },
+    {
+        productName:"Chanta",
+        price:1000,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/chanta.jpg`
+    },
+    {
+        productName:"Chill",
+        price:400,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/chill.jpg`
+    },
+    {
+        productName:"Chrish",
+        price:800,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/chrish.jpg`
+    },
+    {
+        productName:"Gang",
+        price:900,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/gang.jpg`
+    },
+    {
+        productName:"Ginnas",
+        price:300,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/ginn.jpg`
+    },
+    {
+        productName:"Diss",
+        price:250,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/diss.jpg`
+    },
+    {
+        productName:"Harvy",
+        price:1000,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/harvy.jpg`
+    },
+    {
+        productName:"Jayden",
+        price:500,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/jayden.jpg`
+    },
+    {
+        productName:"Joggin",
+        price:200,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/joggin.jpg`
+    },
+    {
+        productName:"Lacoste",
+        price:750,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/lacoste.jpg`
+    },
+    {
+        productName:"Morri",
+        price:100,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/morri.jpg`
+    },
+    {
+        productName:"Multiple",
+        price:700,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/multiple.jpg`
+    },
+    {
+        productName:"Naky",
+        price:400,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/naky.jpg`
+    },
+    {
+        productName:"Ocean",
+        price:600,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/ocean.jpg`
+    },
+    {
+        productName:"RedClub",
+        price:480,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/redclub.jpg`
+    },
+    {
+        productName:"Reggea",
+        price:130,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/reggea.jpg`
+    },
+    {
+        productName:"School",
+        price:270,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/school.jpg`
+    },
+    {
+        productName:"Stouch",
+        price:590,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/stouch.jpg`
+    },
+    {
+        productName:"Sundish",
+        price:140,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/sundish.jpg`
+    },
+    {
+        productName:"Teacher",
+        price:760,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/teacher.jpg`
+    },
+    {
+        productName:"Trek",
+        price:250,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/trek.jpg`
+    },
+    {
+        productName:"White",
+        price:400,
+        size:9,
+        itemsInStore:10,
+        imageUrl:`http://${ipAddress}:3000/images/white.jpg`
+    },
+
+]).then(() => console.log("Users data have been saved"));
+
+}catch(error){
+    res.status(404).json({message:"something went wrong"})
+}
+
+})
+
+module.exports = router

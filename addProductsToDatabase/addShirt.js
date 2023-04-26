@@ -1,0 +1,175 @@
+
+ const express = require("express")
+ const router = express.Router()
+ const shirt = require("../model/shirt")
+ //const ipAddress = "10.1.1.184"
+ const ipAddress = "127.0.0.1"
+ router.use("/images",express.static("images/fashion-shirt"))
+
+router.get("/addShirt", async (req,res)=>{
+
+    try{
+     await shirt.bulkCreate([
+        {
+            productName:"African",
+            price:460,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/african.jpg`
+        },
+        {
+            productName:"Beach",
+            price:700,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/beach.jpg`
+        },
+        {
+            productName:"Big",
+            price:600,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/big.jpg`
+        },
+        {
+            productName:"Black",
+            price:2000,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/black.jpg`
+        },
+        {
+            productName:"Black&White",
+            price:450,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/black&white.jpg`
+        },
+        {
+            productName:"BlackYellow",
+            price:1700,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/blackyellow.jpg`
+        },
+        {
+            productName:"Brown",
+            price:300,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/brown.jpg`
+        },
+        {
+            productName:"Club",
+            price:900,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/club.jpg`
+        },
+        {
+            productName:"DarkGrey",
+            price:140,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/darkgrey.jpg`
+        },
+        {
+            productName:"Dj",
+            price:150,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/dj.jpg`
+        },
+        {
+            productName:"Flower",
+            price:490,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/flower.jpg`
+        },
+        {
+            productName:"Full",
+            price:270,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/full.jpg`
+        },
+        {
+            productName:"Green",
+            price:670,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/green.jpg`
+        },
+        {
+            productName:"Grey",
+            price:300,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/grey.jpg`
+        },
+        {
+            productName:"Lacoste",
+            price:1000,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/lacoste.jpg`
+        },
+        {
+            productName:"Lovely",
+            price:180,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/lovely.jpg`
+        },
+        {
+            productName:"Multiple",
+            price:400,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/multiple.jpg`
+        },
+        {
+            productName:"Office",
+            price:500,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/office.jpg`
+        },
+        {
+            productName:"Red",
+            price:100,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/red.jpg`
+        },
+        {
+            productName:"Voilet",
+            price:200,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/voilet.jpg`
+        },
+        {
+            productName:"White",
+            price:700,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/white.jpg`
+        },
+        {
+            productName:"Yellow",
+            price:170,
+            size:9,
+            itemsInStore:10,
+            imageUrl:`http://${ipAddress}:3000/images/yellow.jpg`
+        },
+    ]
+    ).then(() => console.log("Users data have been saved"));
+}catch(erro){
+    res.status(404).json({message:"something went wrong"})
+}
+
+})
+
+module.exports = router
